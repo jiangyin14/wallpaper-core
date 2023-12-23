@@ -4,7 +4,7 @@ import sys
 
 class VideoWallpaperApp:
     def __init__(self, video_path, play_audio=True):
-        pygame.mixer.init()
+        pygame.init()
 
         self.video_path = video_path
         self.play_audio = play_audio
