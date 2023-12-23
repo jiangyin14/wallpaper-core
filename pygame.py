@@ -4,7 +4,7 @@ import sys
 
 class VideoWallpaperApp:
     def __init__(self, video_path, play_audio=True):
-        pygame.init()
+        pygame.display.init()
 
         self.video_path = video_path
         self.play_audio = play_audio
