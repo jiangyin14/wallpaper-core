@@ -35,7 +35,7 @@ class VideoWallpaperApp:
             # 将窗口置于最底层
             hwnd = self.root.winfo_id()
             win32gui.ShowWindow(hwnd, 9)  # SW_RESTORE
-            win32gui.SetWindowPos(hwnd, win32gui.HWND_BOTTOM, 0, 0, 0, 0, 0x0002 | 0x0001)
+            win32gui.SetWindowPos(hwnd, 0, 0, 0, 0, 0, 0x0002 | 0x0001)  # 使用 0 替代 win32gui.HWND_BOTTOM
 
             self.root.after(int(1000 / self.fps), self.show_frame)
         else:
