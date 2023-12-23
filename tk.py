@@ -1,6 +1,7 @@
 import tkinter as tk
 import cv2
 from PIL import Image, ImageTk
+import pygetwindow as gw
 
 class VideoWallpaperApp:
     def __init__(self, video_path, play_audio=True):
@@ -30,6 +31,12 @@ class VideoWallpaperApp:
             img = Image.fromarray(frame)
             img = ImageTk.PhotoImage(img)
             self.canvas.create_image(0, 0, anchor=tk.NW, image=img)
+
+            # 将窗口置于最底层
+            self.root.update_idletasks()
+            self.root.attributes('-topmost', 0)
+            gw.getWindowsWithTitle(self.root.title())[0].setWindowAtBottom()
+
             self.root.after(int(1000 / self.fps), self.show_frame)
         else:
             self.cap.release()
