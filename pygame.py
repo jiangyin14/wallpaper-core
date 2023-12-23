@@ -4,7 +4,7 @@ import sys
 
 class VideoWallpaperApp:
     def __init__(self, video_path, play_audio=True):
-        pygame.init()
+        pygame.mixer.init()
 
         self.video_path = video_path
         self.play_audio = play_audio
@@ -59,4 +59,3 @@ if __name__ == "__main__":
     play_audio = True if len(sys.argv) < 3 or int(sys.argv[2]) == 1 else False
 
     app = VideoWallpaperApp(video_path, play_audio)
-#11
