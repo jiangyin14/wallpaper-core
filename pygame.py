@@ -59,3 +59,4 @@ if __name__ == "__main__":
     play_audio = True if len(sys.argv) < 3 or int(sys.argv[2]) == 1 else False
 
     app = VideoWallpaperApp(video_path, play_audio)
+#11
